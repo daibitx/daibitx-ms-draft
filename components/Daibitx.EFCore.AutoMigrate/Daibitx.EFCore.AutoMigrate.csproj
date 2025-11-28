@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <PackageId>Daibitx.EFCore.AutoMigrate</PackageId>
+    <Description>Intelligent Entity Framework Core auto-migration library</Description>
+    <PackageTags>entity-framework-core;migration;database;orm</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.*" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.*" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.*" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.*" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.*" />
+  </ItemGroup>
+
+</Project>
