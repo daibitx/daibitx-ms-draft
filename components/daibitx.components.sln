@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{448BC6BC
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicApi", "DynamicApi", "{FC2EB37E-EC95-43A0-85B4-660A151072F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +107,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{39B5712D-8073-483E-BA4F-AB75775E1152} = {FC2EB37E-EC95-43A0-85B4-660A151072F1}
+		{81B4A8D6-FC9E-448C-8710-1C8436242730} = {FC2EB37E-EC95-43A0-85B4-660A151072F1}
+		{3003A30C-FE7E-4995-8728-254007D23A98} = {FC2EB37E-EC95-43A0-85B4-660A151072F1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FC928FF-4654-48BC-B4E9-CB923ECBBAF3}
