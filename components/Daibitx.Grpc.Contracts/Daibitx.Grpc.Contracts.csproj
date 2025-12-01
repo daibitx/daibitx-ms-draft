@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.33.1" />
+		<PackageReference Include="Grpc.Tools" Version="2.60.0" PrivateAssets="All" />
+	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="Protos\**\*.proto" GrpcServices="None" />
+	</ItemGroup>
+
+</Project>
