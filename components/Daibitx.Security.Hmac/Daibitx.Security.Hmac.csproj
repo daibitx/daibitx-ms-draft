@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
     <PackageId>Daibitx.Security.Hmac</PackageId>
     <Description>HMAC authentication middleware for ASP.NET Core</Description>
     <PackageTags>aspnetcore;security;hmac;authentication</PackageTags>
