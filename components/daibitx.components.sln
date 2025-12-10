@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Grpc.Client", "Daib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Localizator", "Daibitx.Localizator\Daibitx.Localizator.csproj", "{E9A23661-9848-434D-B281-1B9E9F4CC4C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Extension.Modularize.EventBus", "Daibitx.Extension.Modularize.EventBus\Daibitx.Extension.Modularize.EventBus.csproj", "{3077B285-B0E4-4231-A9E2-D032FF8E976C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -234,6 +236,18 @@ Global
 		{E9A23661-9848-434D-B281-1B9E9F4CC4C3}.Release|x64.Build.0 = Release|Any CPU
 		{E9A23661-9848-434D-B281-1B9E9F4CC4C3}.Release|x86.ActiveCfg = Release|Any CPU
 		{E9A23661-9848-434D-B281-1B9E9F4CC4C3}.Release|x86.Build.0 = Release|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Debug|x64.Build.0 = Debug|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Debug|x86.Build.0 = Debug|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Release|x64.ActiveCfg = Release|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Release|x64.Build.0 = Release|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Release|x86.ActiveCfg = Release|Any CPU
+		{3077B285-B0E4-4231-A9E2-D032FF8E976C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
