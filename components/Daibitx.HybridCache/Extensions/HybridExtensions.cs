@@ -49,6 +49,19 @@ public static class HybridCacheExtensions
         services.TryAddSingleton<IRedLock, RedLock>();
         services.TryAddSingleton<ICacheSynchronizer, RedisCacheSynchronizer>();
 
+        // 注册布隆过滤器（如果启用）
+        services.TryAddSingleton<IBloomFilter>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<HybridCacheOptions>>().Value;
+            if (options.EnableBloomFilter)
+            {
+                var redis = sp.GetRequiredService<IConnectionMultiplexer>();
+                var logger = sp.GetService<ILogger<RedisBloomFilter>>();
+                return new RedisBloomFilter(redis, Options.Create(options), logger);
+            }
+            return new NullBloomFilter();
+        });
+
         return services;
     }
 
@@ -87,6 +100,19 @@ public static class HybridCacheExtensions
         services.TryAddSingleton<IRedLock, RedLock>();
         services.TryAddSingleton<ICacheSynchronizer, RedisCacheSynchronizer>();
 
+        // 注册布隆过滤器（如果启用）
+        services.TryAddSingleton<IBloomFilter>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<HybridCacheOptions>>().Value;
+            if (options.EnableBloomFilter)
+            {
+                var redis = sp.GetRequiredService<IConnectionMultiplexer>();
+                var logger = sp.GetService<ILogger<RedisBloomFilter>>();
+                return new RedisBloomFilter(redis, Options.Create(options), logger);
+            }
+            return new NullBloomFilter();
+        });
+
         return services;
     }
 
@@ -114,6 +140,18 @@ public static class HybridCacheExtensions
         services.TryAddSingleton<ICacheProvider, RedisCacheProvider>();
         services.TryAddSingleton<IRedLock, RedLock>();
         services.TryAddSingleton<ICacheSynchronizer, RedisCacheSynchronizer>();
+
+        // 注册布隆过滤器（如果启用）
+        services.TryAddSingleton<IBloomFilter>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<HybridCacheOptions>>().Value;
+            if (options.EnableBloomFilter)
+            {
+                var logger = sp.GetService<ILogger<RedisBloomFilter>>();
+                return new RedisBloomFilter(redisConnection, Options.Create(options), logger);
+            }
+            return new NullBloomFilter();
+        });
 
         return services;
     }
@@ -145,6 +183,23 @@ public static class HybridCacheExtensions
                 sp.GetRequiredService<IEnumerable<IConnectionMultiplexer>>(),
                 sp.GetService<ILogger<RedLock>>()));
         services.TryAddSingleton<ICacheSynchronizer, RedisCacheSynchronizer>();
+
+        // 注册布隆过滤器（如果启用，使用第一个Redis连接）
+        services.TryAddSingleton<IBloomFilter>(sp =>
+        {
+            var options = sp.GetRequiredService<IOptions<HybridCacheOptions>>().Value;
+            if (options.EnableBloomFilter)
+            {
+                var redisConnections = sp.GetRequiredService<IEnumerable<IConnectionMultiplexer>>();
+                var firstRedis = redisConnections.FirstOrDefault();
+                if (firstRedis != null)
+                {
+                    var logger = sp.GetService<ILogger<RedisBloomFilter>>();
+                    return new RedisBloomFilter(firstRedis, Options.Create(options), logger);
+                }
+            }
+            return new NullBloomFilter();
+        });
 
         return services;
     }

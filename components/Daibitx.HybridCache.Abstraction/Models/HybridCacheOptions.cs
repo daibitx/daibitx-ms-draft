@@ -76,4 +76,45 @@ public class HybridCacheOptions
     /// 是否启用Key哈希
     /// </summary>
     public bool EnableKeyHashing { get; set; } = false;
+    
+    /// <summary>
+    /// 是否启用布隆过滤器（防缓存穿透）
+    /// </summary>
+    public bool EnableBloomFilter { get; set; } = false;
+    
+    /// <summary>
+    /// 布隆过滤器配置
+    /// </summary>
+    public BloomFilterOptions BloomFilter { get; set; } = new();
+}
+
+/// <summary>
+/// 布隆过滤器配置选项
+/// </summary>
+public class BloomFilterOptions
+{
+    /// <summary>
+    /// 预期元素数量（默认100万）
+    /// </summary>
+    public long ExpectedElements { get; set; } = 1_000_000;
+    
+    /// <summary>
+    /// 误判率（默认0.01%）
+    /// </summary>
+    public double FalsePositiveRate { get; set; } = 0.0001;
+    
+    /// <summary>
+    /// 布隆过滤器Key前缀
+    /// </summary>
+    public string KeyPrefix { get; set; } = "bloomfilter";
+    
+    /// <summary>
+    /// 是否自动构建（渐进式）
+    /// </summary>
+    public bool AutoBuild { get; set; } = true;
+    
+    /// <summary>
+    /// 重建布隆过滤器的间隔时间
+    /// </summary>
+    public TimeSpan RebuildInterval { get; set; } = TimeSpan.FromHours(24);
 }
