@@ -1,4 +1,4 @@
-﻿namespace Daibitx.Nuxus.Hmac
+﻿namespace Daibitx.Security.Hmac
 {
     public class HmacOptions
     {

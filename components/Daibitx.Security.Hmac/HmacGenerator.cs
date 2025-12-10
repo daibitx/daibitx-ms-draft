@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Daibitx.Nuxus.Hmac
+namespace Daibitx.Security.Hmac
 {
     public class HmacGenerator
     {
