@@ -1,88 +1,82 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Daibitx.Captcha.Abstractions
+﻿namespace Daibitx.Captcha.Abstractions
 {
     /// <summary>
-    /// 验证码配置选项
+    /// CAPTCHA configuration options
     /// </summary>
     public class CaptchaOptions
     {
         /// <summary>
-        /// 图片宽度（像素）
+        /// Image width (pixels)
         /// </summary>
         public int Width { get; set; } = 120;
 
         /// <summary>
-        /// 图片高度（像素）
+        /// Image height (pixels)
         /// </summary>
         public int Height { get; set; } = 40;
 
         /// <summary>
-        /// 验证码字符长度
+        /// CAPTCHA code length
         /// </summary>
         public int CodeLength { get; set; } = 4;
 
         /// <summary>
-        /// 验证码字符集
+        /// CAPTCHA character set
         /// </summary>
         public string Charset { get; set; } = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
         /// <summary>
-        /// 是否启用噪点
+        /// Whether to enable noise
         /// </summary>
         public bool Noise { get; set; } = true;
 
         /// <summary>
-        /// 噪点密度（0-100）
+        /// Noise density (0-100)
         /// </summary>
         public int NoiseDensity { get; set; } = 15;
 
         /// <summary>
-        /// 是否启用字符扭曲
+        /// Whether to enable character distortion
         /// </summary>
         public bool Distort { get; set; } = true;
 
         /// <summary>
-        /// 扭曲程度（0-100）
+        /// Distortion level (0-100)
         /// </summary>
         public int DistortLevel { get; set; } = 30;
 
         /// <summary>
-        /// 是否启用随机曲线干扰线
+        /// Whether to enable random curve interference lines
         /// </summary>
         public bool RandomCurve { get; set; } = true;
 
         /// <summary>
-        /// 曲线数量
+        /// Curve count
         /// </summary>
         public int CurveCount { get; set; } = 2;
 
         /// <summary>
-        /// 背景颜色（十六进制，如 #FFFFFF）
+        /// Background color (hexadecimal, e.g., #FFFFFF)
         /// </summary>
         public string BackgroundColor { get; set; } = "#FFFFFF";
 
         /// <summary>
-        /// 前景颜色（十六进制，如 #000000）
+        /// Foreground color (hexadecimal, e.g., #000000)
         /// </summary>
         public string ForegroundColor { get; set; } = "#000000";
 
         /// <summary>
-        /// 最小字体大小
+        /// Minimum font size
         /// </summary>
         public int MinFontSize { get; set; } = 20;
 
         /// <summary>
-        /// 最大字体大小
+        /// Maximum font size
         /// </summary>
         public int MaxFontSize { get; set; } = 28;
 
         /// <summary>
-        /// 字体名称（如 Arial, Microsoft YaHei）
+        /// Font family name (e.g., Arial, Microsoft YaHei)
         /// </summary>
         public string FontFamily { get; set; } = "Arial";
     }

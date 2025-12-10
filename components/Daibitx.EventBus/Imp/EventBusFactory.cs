@@ -6,14 +6,14 @@ namespace Daibitx.Extension.Modularize.EventBus.Imp
     /// <summary>
     /// 事件工厂，所有事件通过 EventMessage 传递，自动桥接类型转换
     /// </summary>
-    public class CrossEventBusFactory : ICrossEventBusFactory
+    public class EventBusFactory : IEventBusFactory
     {
-        private readonly ICrossEventBus _eventBus;
+        private readonly IEventBus _eventBus;
         private readonly ConcurrentDictionary<Delegate, (Guid Id, Action<EventMessage> Wrapper)> _actionMappings = new();
         private readonly ConcurrentDictionary<(Type source, Type target), List<(Func<object, object> getter, Action<object, object> setter)>> _compiledMappings = new();
-        public CrossEventBusFactory()
+        public EventBusFactory()
         {
-            _eventBus = new CrossEventBus();
+            _eventBus = new EventBus();
         }
 
         public async Task PublishAsync<T>(T data) where T : new()

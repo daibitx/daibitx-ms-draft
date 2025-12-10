@@ -4,7 +4,7 @@
     /// 事件总线
     /// </summary>
     /// <typeparam name="TEvent"></typeparam>
-    public interface ICrossEventBus
+    public interface IEventBus
     {
         Task Publish(EventMessage data);
         Task Publish(string topic, EventMessage data);

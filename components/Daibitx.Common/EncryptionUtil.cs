@@ -6,8 +6,8 @@ using System.Text.RegularExpressions;
 namespace Daibitx.Common
 {
     /// <summary>
-    /// 加密工具类
-    /// 提供各种加密、编码和解码方法
+    /// Encryption utility class
+    /// Provides various encryption, encoding and decoding methods
     /// </summary>
     public static class EncryptionUtil
     {
@@ -16,10 +16,10 @@ namespace Daibitx.Common
         private const int Iterations = 10000;
 
         /// <summary>
-        /// MD5加密
+        /// MD5 encryption
         /// </summary>
-        /// <param name="input">要加密的字符串</param>
-        /// <returns>MD5哈希值的十六进制字符串</returns>
+        /// <param name="input">String to encrypt</param>
+        /// <returns>MD5 hash hexadecimal string</returns>
         public static string Md5(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -43,10 +43,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// SHA1加密
+        /// SHA1 encryption
         /// </summary>
-        /// <param name="input">要加密的字符串</param>
-        /// <returns>SHA1哈希值的十六进制字符串</returns>
+        /// <param name="input">String to encrypt</param>
+        /// <returns>SHA1 hash hexadecimal string</returns>
         public static string Sha1(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -70,10 +70,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// SHA256加密
+        /// SHA256 encryption
         /// </summary>
-        /// <param name="input">要加密的字符串</param>
-        /// <returns>SHA256哈希值的十六进制字符串</returns>
+        /// <param name="input">String to encrypt</param>
+        /// <returns>SHA256 hash hexadecimal string</returns>
         public static string Sha256(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -97,10 +97,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// SHA512加密
+        /// SHA512 encryption
         /// </summary>
-        /// <param name="input">要加密的字符串</param>
-        /// <returns>SHA512哈希值的十六进制字符串</returns>
+        /// <param name="input">String to encrypt</param>
+        /// <returns>SHA512 hash hexadecimal string</returns>
         public static string Sha512(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -124,10 +124,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// Base64编码
+        /// Base64 encoding
         /// </summary>
-        /// <param name="input">要编码的字符串</param>
-        /// <returns>Base64编码后的字符串</returns>
+        /// <param name="input">String to encode</param>
+        /// <returns>Base64 encoded string</returns>
         public static string Base64Encode(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -147,10 +147,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// Base64解码
+        /// Base64 decoding
         /// </summary>
-        /// <param name="input">要解码的Base64字符串</param>
-        /// <returns>解码后的字符串</returns>
+        /// <param name="input">Base64 string to decode</param>
+        /// <returns>Decoded string</returns>
         public static string Base64Decode(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -170,10 +170,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// URL编码
+        /// URL encoding
         /// </summary>
-        /// <param name="input">要编码的字符串</param>
-        /// <returns>URL编码后的字符串</returns>
+        /// <param name="input">String to encode</param>
+        /// <returns>URL encoded string</returns>
         public static string UrlEncode(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -192,10 +192,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// URL解码
+        /// URL decoding
         /// </summary>
-        /// <param name="input">要解码的URL字符串</param>
-        /// <returns>解码后的字符串</returns>
+        /// <param name="input">URL string to decode</param>
+        /// <returns>Decoded string</returns>
         public static string UrlDecode(string input)
         {
             if (StringUtil.IsNullOrWhiteSpace(input))
@@ -214,10 +214,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 生成指定长度的盐值
+        /// Generate salt of specified length
         /// </summary>
-        /// <param name="size">盐值长度（字节）</param>
-        /// <returns>Base64编码的盐值</returns>
+        /// <param name="size">Salt length (bytes)</param>
+        /// <returns>Base64 encoded salt</returns>
         public static string GenerateSalt(int size = SaltSize)
         {
             if (size <= 0)
@@ -235,11 +235,11 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 哈希密码（使用PBKDF2）
+        /// Hash password (using PBKDF2)
         /// </summary>
-        /// <param name="password">密码</param>
-        /// <param name="salt">盐值</param>
-        /// <returns>哈希后的密码</returns>
+        /// <param name="password">Password</param>
+        /// <param name="salt">Salt</param>
+        /// <returns>Hashed password</returns>
         public static string HashPassword(string password, string salt)
         {
             if (StringUtil.IsNullOrWhiteSpace(password))
@@ -268,11 +268,11 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证密码
+        /// Verify password
         /// </summary>
-        /// <param name="password">要验证的密码</param>
-        /// <param name="hashedPassword">已哈希的密码</param>
-        /// <returns>密码是否匹配</returns>
+        /// <param name="password">Password to verify</param>
+        /// <param name="hashedPassword">Hashed password</param>
+        /// <returns>Whether password matches</returns>
         public static bool VerifyPassword(string password, string hashedPassword)
         {
             if (StringUtil.IsNullOrWhiteSpace(password) || StringUtil.IsNullOrWhiteSpace(hashedPassword))
@@ -280,7 +280,7 @@ namespace Daibitx.Common
                 return false;
             }
 
-            // 简单的密码验证逻辑，实际应用中应该使用更安全的密码存储方式
+            // Simple password verification logic, should use more secure password storage in real applications
             var inputHash = Sha256(password);
             return string.Equals(inputHash, hashedPassword, StringComparison.OrdinalIgnoreCase);
         }

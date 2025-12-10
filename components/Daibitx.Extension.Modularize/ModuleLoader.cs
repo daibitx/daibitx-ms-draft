@@ -1,7 +1,5 @@
 ﻿using Daibitx.Extension.Modularize.Abstractons;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Linq;
 using System.Reflection;
 
 namespace Daibitx.Extension.Modularize

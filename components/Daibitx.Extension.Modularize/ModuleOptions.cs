@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Daibitx.Extension.Modularize
+﻿namespace Daibitx.Extension.Modularize
 {
     public class ModuleOptions
     {

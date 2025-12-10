@@ -4,16 +4,16 @@ using System.Text;
 namespace Daibitx.Common
 {
     /// <summary>
-    /// 异常处理工具类
-    /// 提供异常相关的常用操作方法
+    /// Exception handling utility class
+    /// Provides common exception related operations
     /// </summary>
     public static class ExceptionUtil
     {
         /// <summary>
-        /// 获取异常的完整信息（包括所有内部异常）
+        /// Get complete exception information (including all inner exceptions)
         /// </summary>
-        /// <param name="exception">异常对象</param>
-        /// <returns>完整的异常信息字符串</returns>
+        /// <param name="exception">Exception object</param>
+        /// <returns>Complete exception information string</returns>
         public static string GetFullMessage(Exception exception)
         {
             if (exception == null)
@@ -51,20 +51,20 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 获取异常的堆栈跟踪信息
+        /// Get exception stack trace information
         /// </summary>
-        /// <param name="exception">异常对象</param>
-        /// <returns>堆栈跟踪字符串</returns>
+        /// <param name="exception">Exception object</param>
+        /// <returns>Stack trace string</returns>
         public static string GetStackTrace(Exception exception)
         {
             return exception?.StackTrace ?? string.Empty;
         }
 
         /// <summary>
-        /// 判断是否为关键异常（如OutOfMemoryException、StackOverflowException等）
+        /// Check if it's a critical exception (e.g., OutOfMemoryException, StackOverflowException, etc.)
         /// </summary>
-        /// <param name="exception">异常对象</param>
-        /// <returns>是否为关键异常</returns>
+        /// <param name="exception">Exception object</param>
+        /// <returns>Whether it's a critical exception</returns>
         public static bool IsCritical(Exception exception)
         {
             if (exception == null)
@@ -74,7 +74,7 @@ namespace Daibitx.Common
 
             var exceptionType = exception.GetType();
             
-            // 关键异常类型
+            // Critical exception types
             return exceptionType == typeof(OutOfMemoryException) ||
                    exceptionType == typeof(StackOverflowException) ||
                    exceptionType == typeof(ThreadAbortException) ||
@@ -87,10 +87,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 尝试执行操作，返回是否成功
+        /// Try to execute action, return whether successful
         /// </summary>
-        /// <param name="action">要执行的操作</param>
-        /// <returns>执行是否成功</returns>
+        /// <param name="action">Action to execute</param>
+        /// <returns>Whether execution was successful</returns>
         public static bool TryExecute(Action action)
         {
             if (action == null)
@@ -110,12 +110,12 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 尝试执行操作并返回值，返回是否成功
+        /// Try to execute function and return value, return whether successful
         /// </summary>
-        /// <typeparam name="T">返回值类型</typeparam>
-        /// <param name="func">要执行的函数</param>
-        /// <param name="result">执行结果</param>
-        /// <returns>执行是否成功</returns>
+        /// <typeparam name="T">Return value type</typeparam>
+        /// <param name="func">Function to execute</param>
+        /// <param name="result">Execution result</param>
+        /// <returns>Whether execution was successful</returns>
         public static bool TryExecute<T>(Func<T> func, out T result)
         {
             result = default(T);
@@ -137,11 +137,11 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 包装异常，添加自定义错误信息
+        /// Wrap exception with custom error message
         /// </summary>
-        /// <typeparam name="T">异常类型</typeparam>
-        /// <param name="action">要执行的操作</param>
-        /// <param name="errorMessage">自定义错误信息</param>
+        /// <typeparam name="T">Exception type</typeparam>
+        /// <param name="action">Action to execute</param>
+        /// <param name="errorMessage">Custom error message</param>
         public static void WrapException<T>(Action action, string errorMessage) where T : Exception, new()
         {
             if (action == null)
@@ -161,11 +161,11 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 包装异常，添加自定义错误信息（泛型版本）
+        /// Wrap exception with custom error message (generic version)
         /// </summary>
-        /// <param name="action">要执行的操作</param>
-        /// <param name="errorMessage">自定义错误信息</param>
-        /// <param name="exceptionType">异常类型</param>
+        /// <param name="action">Action to execute</param>
+        /// <param name="errorMessage">Custom error message</param>
+        /// <param name="exceptionType">Exception type</param>
         public static void WrapException(Action action, string errorMessage, Type exceptionType)
         {
             if (action == null)

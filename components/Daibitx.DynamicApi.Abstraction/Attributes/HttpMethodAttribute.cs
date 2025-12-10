@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Daibitx.DynamicApi.Abstraction.Attributes;
+﻿namespace Daibitx.DynamicApi.Abstraction.Attributes;
 [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
 public class HttpMethodAttribute : Attribute
 {

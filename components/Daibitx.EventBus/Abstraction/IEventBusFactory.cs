@@ -3,7 +3,7 @@
     /// <summary>
     /// 事件工厂
     /// </summary>
-    public interface ICrossEventBusFactory
+    public interface IEventBusFactory
     {
         Task PublishAsync<T>(T data) where T : new();
         Task PublishAsync<T>(string topic, T data) where T : new();

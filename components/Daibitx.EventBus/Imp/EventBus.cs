@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 
 namespace Daibitx.Extension.Modularize.EventBus.Imp
 {
-    public class CrossEventBus : ICrossEventBus
+    public class EventBus : IEventBus
     {
         private readonly ConcurrentDictionary<Guid, Action<EventMessage>> _globalSubscribers = new();
         private readonly ConcurrentDictionary<string, ConcurrentDictionary<Guid, Action<EventMessage>>> _topicSubscribers = new();

@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 namespace Daibitx.Common
 {
     /// <summary>
-    /// 验证工具类
-    /// 提供各种数据验证方法
+    /// Validation utility class
+    /// Provides various data validation methods
     /// </summary>
     public static class ValidationUtil
     {
@@ -43,10 +43,10 @@ namespace Daibitx.Common
             RegexOptions.Compiled | RegexOptions.Singleline);
 
         /// <summary>
-        /// 验证邮箱格式
+        /// Validate email format
         /// </summary>
-        /// <param name="email">邮箱地址</param>
-        /// <returns>是否为有效的邮箱格式</returns>
+        /// <param name="email">Email address</param>
+        /// <returns>Whether it's a valid email format</returns>
         public static bool IsEmail(string email)
         {
             if (StringUtil.IsNullOrWhiteSpace(email))
@@ -58,10 +58,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证手机号（中国大陆）
+        /// Validate phone number (Mainland China)
         /// </summary>
-        /// <param name="phoneNumber">手机号</param>
-        /// <returns>是否为有效的手机号</returns>
+        /// <param name="phoneNumber">Phone number</param>
+        /// <returns>Whether it's a valid phone number</returns>
         public static bool IsPhoneNumber(string phoneNumber)
         {
             if (StringUtil.IsNullOrWhiteSpace(phoneNumber))
@@ -73,10 +73,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证URL格式
+        /// Validate URL format
         /// </summary>
-        /// <param name="url">URL地址</param>
-        /// <returns>是否为有效的URL格式</returns>
+        /// <param name="url">URL address</param>
+        /// <returns>Whether it's a valid URL format</returns>
         public static bool IsUrl(string url)
         {
             if (StringUtil.IsNullOrWhiteSpace(url))
@@ -88,10 +88,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证IP地址格式
+        /// Validate IP address format
         /// </summary>
-        /// <param name="ipAddress">IP地址</param>
-        /// <returns>是否为有效的IP地址</returns>
+        /// <param name="ipAddress">IP address</param>
+        /// <returns>Whether it's a valid IP address</returns>
         public static bool IsIpAddress(string ipAddress)
         {
             if (StringUtil.IsNullOrWhiteSpace(ipAddress))
@@ -105,7 +105,7 @@ namespace Daibitx.Common
                 return false;
             }
 
-            // 验证每个段是否在0-255范围内
+            // Validate each segment is within 0-255 range
             for (int i = 1; i <= 4; i++)
             {
                 if (!int.TryParse(match.Groups[i].Value, out var segment) || segment < 0 || segment > 255)
@@ -118,10 +118,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证是否为数字
+        /// Validate if it's a number
         /// </summary>
-        /// <param name="value">要验证的字符串</param>
-        /// <returns>是否为数字</returns>
+        /// <param name="value">String to validate</param>
+        /// <returns>Whether it's a number</returns>
         public static bool IsNumeric(string value)
         {
             if (StringUtil.IsNullOrWhiteSpace(value))
@@ -133,10 +133,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证GUID格式
+        /// Validate GUID format
         /// </summary>
-        /// <param name="guid">GUID字符串</param>
-        /// <returns>是否为有效的GUID格式</returns>
+        /// <param name="guid">GUID string</param>
+        /// <returns>Whether it's a valid GUID format</returns>
         public static bool IsGuid(string guid)
         {
             if (StringUtil.IsNullOrWhiteSpace(guid))
@@ -148,10 +148,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证Base64格式
+        /// Validate Base64 format
         /// </summary>
-        /// <param name="base64">Base64字符串</param>
-        /// <returns>是否为有效的Base64格式</returns>
+        /// <param name="base64">Base64 string</param>
+        /// <returns>Whether it's a valid Base64 format</returns>
         public static bool IsBase64(string base64)
         {
             if (StringUtil.IsNullOrWhiteSpace(base64))
@@ -159,7 +159,7 @@ namespace Daibitx.Common
                 return false;
             }
 
-            // Base64字符串长度必须是4的倍数
+            // Base64 string length must be a multiple of 4
             if (base64.Length % 4 != 0)
             {
                 return false;
@@ -169,10 +169,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证JSON格式
+        /// Validate JSON format
         /// </summary>
-        /// <param name="json">JSON字符串</param>
-        /// <returns>是否为有效的JSON格式</returns>
+        /// <param name="json">JSON string</param>
+        /// <returns>Whether it's a valid JSON format</returns>
         public static bool IsJson(string json)
         {
             if (StringUtil.IsNullOrWhiteSpace(json))
@@ -184,13 +184,13 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证值是否在指定范围内
+        /// Validate if value is within specified range
         /// </summary>
-        /// <typeparam name="T">值类型</typeparam>
-        /// <param name="value">要验证的值</param>
-        /// <param name="min">最小值</param>
-        /// <param name="max">最大值</param>
-        /// <returns>是否在范围内</returns>
+        /// <typeparam name="T">Value type</typeparam>
+        /// <param name="value">Value to validate</param>
+        /// <param name="min">Minimum value</param>
+        /// <param name="max">Maximum value</param>
+        /// <returns>Whether it's within range</returns>
         public static bool IsInRange<T>(T value, T min, T max) where T : IComparable<T>
         {
             if (value == null)
@@ -202,22 +202,22 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 验证对象是否为null
+        /// Validate if object is null
         /// </summary>
-        /// <typeparam name="T">对象类型</typeparam>
-        /// <param name="value">要验证的对象</param>
-        /// <returns>是否为null</returns>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="value">Object to validate</param>
+        /// <returns>Whether it's null</returns>
         public static bool IsNull<T>(T value)
         {
             return value == null;
         }
 
         /// <summary>
-        /// 验证对象是否有值（不为null）
+        /// Validate if object has value (not null)
         /// </summary>
-        /// <typeparam name="T">对象类型</typeparam>
-        /// <param name="value">要验证的对象</param>
-        /// <returns>是否有值</returns>
+        /// <typeparam name="T">Object type</typeparam>
+        /// <param name="value">Object to validate</param>
+        /// <returns>Whether it has value</returns>
         public static bool HasValue<T>(T value)
         {
             return value != null;

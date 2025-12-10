@@ -6,8 +6,8 @@ using System.Text.RegularExpressions;
 namespace Daibitx.Common
 {
     /// <summary>
-    /// 字符串工具类
-    /// 提供字符串相关的常用操作方法
+    /// String utility class
+    /// Provides common string related operations
     /// </summary>
     public static class StringUtil
     {
@@ -17,40 +17,40 @@ namespace Daibitx.Common
         private static readonly Regex KebabCaseRegex = new Regex(@"([a-z])([A-Z])|([A-Z])([A-Z][a-z])", RegexOptions.Compiled);
 
         /// <summary>
-        /// 判断字符串是否为null或空
+        /// Check if string is null or empty
         /// </summary>
-        /// <param name="value">要判断的字符串</param>
-        /// <returns>是否为null或空</returns>
+        /// <param name="value">String to check</param>
+        /// <returns>Whether it's null or empty</returns>
         public static bool IsNullOrEmpty(string value)
         {
             return string.IsNullOrEmpty(value);
         }
 
         /// <summary>
-        /// 判断字符串是否为null、空或空白字符
+        /// Check if string is null, empty or whitespace
         /// </summary>
-        /// <param name="value">要判断的字符串</param>
-        /// <returns>是否为null、空或空白字符</returns>
+        /// <param name="value">String to check</param>
+        /// <returns>Whether it's null, empty or whitespace</returns>
         public static bool IsNullOrWhiteSpace(string value)
         {
             return string.IsNullOrWhiteSpace(value);
         }
 
         /// <summary>
-        /// 安全去除字符串两端的空白字符
+        /// Safely trim whitespace from both ends of string
         /// </summary>
-        /// <param name="value">要处理的字符串</param>
-        /// <returns>处理后的字符串</returns>
+        /// <param name="value">String to process</param>
+        /// <returns>Processed string</returns>
         public static string TrimSafe(string value)
         {
             return value?.Trim() ?? string.Empty;
         }
 
         /// <summary>
-        /// 将字符串转换为驼峰命名（camelCase）
+        /// Convert string to camelCase
         /// </summary>
-        /// <param name="value">要转换的字符串</param>
-        /// <returns>驼峰命名字符串</returns>
+        /// <param name="value">String to convert</param>
+        /// <returns>camelCase string</returns>
         public static string ToCamelCase(string value)
         {
             if (IsNullOrWhiteSpace(value))
@@ -67,10 +67,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 将字符串转换为帕斯卡命名（PascalCase）
+        /// Convert string to PascalCase
         /// </summary>
-        /// <param name="value">要转换的字符串</param>
-        /// <returns>帕斯卡命名字符串</returns>
+        /// <param name="value">String to convert</param>
+        /// <returns>PascalCase string</returns>
         public static string ToPascalCase(string value)
         {
             if (IsNullOrWhiteSpace(value))
@@ -97,10 +97,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 将字符串转换为蛇形命名（snake_case）
+        /// Convert string to snake_case
         /// </summary>
-        /// <param name="value">要转换的字符串</param>
-        /// <returns>蛇形命名字符串</returns>
+        /// <param name="value">String to convert</param>
+        /// <returns>snake_case string</returns>
         public static string ToSnakeCase(string value)
         {
             if (IsNullOrWhiteSpace(value))
@@ -113,10 +113,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 将字符串转换为烤肉串命名（kebab-case）
+        /// Convert string to kebab-case
         /// </summary>
-        /// <param name="value">要转换的字符串</param>
-        /// <returns>烤肉串命名字符串</returns>
+        /// <param name="value">String to convert</param>
+        /// <returns>kebab-case string</returns>
         public static string ToKebabCase(string value)
         {
             if (IsNullOrWhiteSpace(value))
@@ -129,11 +129,11 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 截断字符串到指定长度
+        /// Truncate string to specified length
         /// </summary>
-        /// <param name="value">要截断的字符串</param>
-        /// <param name="maxLength">最大长度</param>
-        /// <returns>截断后的字符串</returns>
+        /// <param name="value">String to truncate</param>
+        /// <param name="maxLength">Maximum length</param>
+        /// <returns>Truncated string</returns>
         public static string Truncate(string value, int maxLength)
         {
             if (IsNullOrWhiteSpace(value))
@@ -150,13 +150,13 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 对字符串进行掩码处理
+        /// Mask string
         /// </summary>
-        /// <param name="value">要处理的字符串</param>
-        /// <param name="start">开始保留的字符数</param>
-        /// <param name="end">结束保留的字符数</param>
-        /// <param name="maskChar">掩码字符</param>
-        /// <returns>掩码处理后的字符串</returns>
+        /// <param name="value">String to mask</param>
+        /// <param name="start">Number of characters to keep at start</param>
+        /// <param name="end">Number of characters to keep at end</param>
+        /// <param name="maskChar">Mask character</param>
+        /// <returns>Masked string</returns>
         public static string Mask(string value, int start, int end, char maskChar = '*')
         {
             if (IsNullOrWhiteSpace(value))
@@ -176,11 +176,11 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 生成指定长度的随机字符串
+        /// Generate random string of specified length
         /// </summary>
-        /// <param name="length">字符串长度</param>
-        /// <param name="charset">字符集（默认为字母和数字）</param>
-        /// <returns>随机字符串</returns>
+        /// <param name="length">String length</param>
+        /// <param name="charset">Character set (default is letters and numbers)</param>
+        /// <returns>Random string</returns>
         public static string GenerateRandom(int length, string charset = null)
         {
             if (length <= 0)
@@ -208,10 +208,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 计算字符串的哈希值（使用SHA256）
+        /// Compute string hash (using SHA256)
         /// </summary>
-        /// <param name="value">要计算哈希的字符串</param>
-        /// <returns>哈希值的十六进制字符串</returns>
+        /// <param name="value">String to compute hash for</param>
+        /// <returns>Hash hexadecimal string</returns>
         public static string ComputeHash(string value)
         {
             if (IsNullOrWhiteSpace(value))

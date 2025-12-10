@@ -3,12 +3,12 @@
 namespace Daibitx.Common
 {
     /// <summary>
-    /// 雪花id生成
-    /// 1位符号 + 41位时间戳 + 10位机器ID + 12位序列号
+    /// Snowflake ID generator
+    /// 1 sign bit + 41 timestamp bits + 10 machine ID bits + 12 sequence bits
     /// </summary>
     public class SnowflakeIdGenerator
     {
-        private const long Twepoch = 1672531200000L; // 自定义起始时间（毫秒）
+        private const long Twepoch = 1672531200000L; // Custom start time (milliseconds)
         private const int WorkerIdBits = 5;
         private const int DatacenterIdBits = 5;
         private const int SequenceBits = 12;

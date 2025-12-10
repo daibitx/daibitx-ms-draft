@@ -1,9 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-namespace Daibitx.Extension.Modularize
+﻿namespace Daibitx.Extension.Modularize
 {
     internal class ModuleDiscoverer
     {

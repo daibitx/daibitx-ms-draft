@@ -66,7 +66,6 @@ namespace Daibitx.Extension.Modularize.EventBus
             var sType = sProp.PropertyType;
             var tType = tProp.PropertyType;
 
-            // 如果是简单类型，包含强制转换
             if (IsSimple(sType) && IsSimple(tType))
             {
                 return (src, dst) =>
@@ -76,19 +75,15 @@ namespace Daibitx.Extension.Modularize.EventBus
                 };
             }
 
-            // 数组
             if (sType.IsArray && tType.IsArray)
                 return CreateArrayMapper(sProp, tProp);
 
-            // 字典
             if (IsDictionary(sType) && IsDictionary(tType))
                 return CreateDictionaryMapper(sProp, tProp);
 
-            // 集合（List、HashSet…）
             if (IsEnumerable(sType) && IsEnumerable(tType))
                 return CreateEnumerableMapper(sProp, tProp);
 
-            // 复杂类型递归映射
             return (src, dst) =>
             {
                 var sVal = sProp.GetValue(src);
@@ -215,7 +210,6 @@ namespace Daibitx.Extension.Modularize.EventBus
 
             var sourceType = value.GetType();
 
-            // 1. 已注册的自定义转换器
             if (_converterCache.TryGetValue((sourceType, targetType), out var converter))
                 return converter.DynamicInvoke(value);
 
@@ -224,14 +218,12 @@ namespace Daibitx.Extension.Modularize.EventBus
                 var intValue = (int)Convert.ChangeType(value, typeof(int));
                 return Enum.ToObject(targetType, intValue);
             }
-            // 2. enum→string / string→enum
             if (targetType.IsEnum && sourceType == typeof(string))
                 return Enum.Parse(targetType, value.ToString());
 
             if (sourceType.IsEnum && targetType == typeof(string))
                 return value.ToString();
 
-            // 3. 其他基础类型转换
             return Convert.ChangeType(value, targetType);
         }
     }

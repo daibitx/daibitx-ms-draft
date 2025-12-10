@@ -5,7 +5,7 @@
         public string TypeName { get; set; }
         public object Payload { get; set; }
         /// <summary>
-        /// 中间层转化
+        /// Transform layer
         /// </summary>
         public EventMessage(object payload)
         {

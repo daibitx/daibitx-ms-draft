@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Daibitx.DynamicApi.Abstraction.Attributes;
+﻿namespace Daibitx.DynamicApi.Abstraction.Attributes;
 /// <summary>
 /// represents the route prefix for a dynamic API controller.
 /// </summary>

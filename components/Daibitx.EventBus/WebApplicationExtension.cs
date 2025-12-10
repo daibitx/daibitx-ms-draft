@@ -7,9 +7,9 @@ namespace Daibitx.Extension.Modularize.EventBus
     {
         public static void AddCrossEventBus(this IServiceCollection services)
         {
-            services.AddSingleton<ICrossEventBusFactory>((serviceProvider) =>
+            services.AddSingleton<IEventBusFactory>((serviceProvider) =>
             {
-                return CrossEvent.CrossEventInstance;
+                return Event.CrossEventInstance;
             });
         }
     }

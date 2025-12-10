@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Common", "Daibitx.Common.csproj", "{6A89C8C1-59E3-D266-08BD-1E7BA2579B86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A89C8C1-59E3-D266-08BD-1E7BA2579B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A89C8C1-59E3-D266-08BD-1E7BA2579B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A89C8C1-59E3-D266-08BD-1E7BA2579B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A89C8C1-59E3-D266-08BD-1E7BA2579B86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C31926EE-C7D1-435B-8645-5E190033947F}
+	EndGlobalSection
+EndGlobal

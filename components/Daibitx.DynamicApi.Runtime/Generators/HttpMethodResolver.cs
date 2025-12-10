@@ -3,7 +3,7 @@
 namespace Daibitx.DynamicApi.Runtime.Generators
 {
     /// <summary>
-    /// HTTP 方法推导逻辑
+    /// HTTP Method Resolver
     /// </summary>
     public static class HttpMethodResolver
     {

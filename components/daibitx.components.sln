@@ -44,7 +44,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Grpc.Client", "Daib
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Localizator", "Daibitx.Localizator\Daibitx.Localizator.csproj", "{E9A23661-9848-434D-B281-1B9E9F4CC4C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Extension.Modularize.EventBus", "Daibitx.Extension.Modularize.EventBus\Daibitx.Extension.Modularize.EventBus.csproj", "{3077B285-B0E4-4231-A9E2-D032FF8E976C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Extension.Modularize.EventBus", "Daibitx.EventBus\Daibitx.EventBus.csproj", "{3077B285-B0E4-4231-A9E2-D032FF8E976C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.EFCore.Extension", "Daibitx.EFCore.Extension\Daibitx.EFCore.Extension.csproj", "{EABA89D9-BCA2-44DF-8AD8-9E280EFB8479}"
 EndProject

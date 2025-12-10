@@ -5,29 +5,29 @@ using System.Globalization;
 namespace Daibitx.Common
 {
     /// <summary>
-    /// 类型转换工具类
-    /// 提供安全且灵活的类型转换方法
+    /// Type conversion utility class
+    /// Provides safe and flexible type conversion methods
     /// </summary>
     public static class ConvertUtil
     {
         /// <summary>
-        /// 安全转换为指定类型
+        /// Safely convert to specified type
         /// </summary>
-        /// <typeparam name="T">目标类型</typeparam>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的值，如果转换失败则返回类型的默认值</returns>
+        /// <typeparam name="T">Target type</typeparam>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted value, returns default value of type if conversion fails</returns>
         public static T To<T>(object value)
         {
             return To(value, default(T));
         }
 
         /// <summary>
-        /// 安全转换为指定类型，并提供默认值
+        /// Safely convert to specified type with default value
         /// </summary>
-        /// <typeparam name="T">目标类型</typeparam>
-        /// <param name="value">要转换的值</param>
-        /// <param name="defaultValue">转换失败时的默认值</param>
-        /// <returns>转换后的值，如果转换失败则返回默认值</returns>
+        /// <typeparam name="T">Target type</typeparam>
+        /// <param name="value">Value to convert</param>
+        /// <param name="defaultValue">Default value when conversion fails</param>
+        /// <returns>Converted value, returns default value if conversion fails</returns>
         public static T To<T>(object value, T defaultValue)
         {
             if (value == null || value == DBNull.Value)
@@ -60,50 +60,50 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 转换为Int32类型
+        /// Convert to Int32 type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的Int32值，失败返回0</returns>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted Int32 value, returns 0 on failure</returns>
         public static int ToInt32(object value)
         {
             return To<int>(value);
         }
 
         /// <summary>
-        /// 转换为Int64类型
+        /// Convert to Int64 type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的Int64值，失败返回0</returns>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted Int64 value, returns 0 on failure</returns>
         public static long ToInt64(object value)
         {
             return To<long>(value);
         }
 
         /// <summary>
-        /// 转换为Decimal类型
+        /// Convert to Decimal type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的Decimal值，失败返回0</returns>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted Decimal value, returns 0 on failure</returns>
         public static decimal ToDecimal(object value)
         {
             return To<decimal>(value);
         }
 
         /// <summary>
-        /// 转换为Double类型
+        /// Convert to Double type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的Double值，失败返回0</returns>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted Double value, returns 0 on failure</returns>
         public static double ToDouble(object value)
         {
             return To<double>(value);
         }
 
         /// <summary>
-        /// 转换为Boolean类型
+        /// Convert to Boolean type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的Boolean值，失败返回false</returns>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted Boolean value, returns false on failure</returns>
         public static bool ToBoolean(object value)
         {
             if (value == null || value == DBNull.Value)
@@ -126,10 +126,10 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 转换为DateTime类型
+        /// Convert to DateTime type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的DateTime值，失败返回DateTime.MinValue</returns>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted DateTime value, returns DateTime.MinValue on failure</returns>
         public static DateTime ToDateTime(object value)
         {
             if (value == null || value == DBNull.Value)
@@ -145,12 +145,12 @@ namespace Daibitx.Common
             var stringValue = value.ToString();
             if (long.TryParse(stringValue, out var timestamp))
             {
-                // 尝试作为时间戳解析
-                if (timestamp > 10000000000L) // 毫秒时间戳
+                // Try to parse as timestamp
+                if (timestamp > 10000000000L) // Millisecond timestamp
                 {
                     return DateTimeUtil.FromUnixTimeMilliseconds(timestamp);
                 }
-                else // 秒时间戳
+                else // Second timestamp
                 {
                     return DateTimeUtil.FromUnixTimeSeconds(timestamp);
                 }
@@ -160,21 +160,21 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 转换为String类型
+        /// Convert to String type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <returns>转换后的String值，失败返回空字符串</returns>
+        /// <param name="value">Value to convert</param>
+        /// <returns>Converted String value, returns empty string on failure</returns>
         public static string ToString(object value)
         {
             return To<string>(value, string.Empty);
         }
 
         /// <summary>
-        /// 转换为指定类型
+        /// Convert to specified type
         /// </summary>
-        /// <param name="value">要转换的值</param>
-        /// <param name="targetType">目标类型</param>
-        /// <returns>转换后的值，如果转换失败则返回null</returns>
+        /// <param name="value">Value to convert</param>
+        /// <param name="targetType">Target type</param>
+        /// <returns>Converted value, returns null if conversion fails</returns>
         public static object ChangeType(object value, Type targetType)
         {
             if (value == null || value == DBNull.Value)
@@ -211,12 +211,12 @@ namespace Daibitx.Common
         }
 
         /// <summary>
-        /// 尝试转换为指定类型
+        /// Try to convert to specified type
         /// </summary>
-        /// <typeparam name="T">目标类型</typeparam>
-        /// <param name="value">要转换的值</param>
-        /// <param name="result">转换后的结果</param>
-        /// <returns>转换是否成功</returns>
+        /// <typeparam name="T">Target type</typeparam>
+        /// <param name="value">Value to convert</param>
+        /// <param name="result">Conversion result</param>
+        /// <returns>Whether conversion was successful</returns>
         public static bool TryConvert<T>(object value, out T result)
         {
             result = default(T);
