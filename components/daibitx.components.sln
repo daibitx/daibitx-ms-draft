@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Extension.Modulariz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.EFCore.Extension", "Daibitx.EFCore.Extension\Daibitx.EFCore.Extension.csproj", "{EABA89D9-BCA2-44DF-8AD8-9E280EFB8479}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daibitx.Captcha", "Daibitx.Captcha\Daibitx.Captcha.csproj", "{679A4D33-D1AC-433F-A895-DEDC59408FFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -262,6 +264,18 @@ Global
 		{EABA89D9-BCA2-44DF-8AD8-9E280EFB8479}.Release|x64.Build.0 = Release|Any CPU
 		{EABA89D9-BCA2-44DF-8AD8-9E280EFB8479}.Release|x86.ActiveCfg = Release|Any CPU
 		{EABA89D9-BCA2-44DF-8AD8-9E280EFB8479}.Release|x86.Build.0 = Release|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Debug|x64.Build.0 = Debug|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Debug|x86.Build.0 = Debug|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Release|x64.ActiveCfg = Release|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Release|x64.Build.0 = Release|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Release|x86.ActiveCfg = Release|Any CPU
+		{679A4D33-D1AC-433F-A895-DEDC59408FFF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
