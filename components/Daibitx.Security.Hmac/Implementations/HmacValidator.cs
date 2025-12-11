@@ -1,10 +1,12 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Daibitx.Security.Hmac.Abstractions;
+using Daibitx.Security.Hmac.Models;
+using Microsoft.Extensions.Options;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Daibitx.Security.Hmac
+namespace Daibitx.Security.Hmac.Implementations
 {
-    public class HmacValidator
+    public class HmacValidator : IHmacValidator
     {
         private readonly IOptionsMonitor<HmacOptions> _options;
 
@@ -32,16 +34,17 @@ namespace Daibitx.Security.Hmac
                 return false;
             }
             string msg = $"{method}:{path}:{timestamp}:{bodyHash}";
-            string expected = ComputeHmac(opts.SecretKey, msg);
+            string expected = ComputeHmac(msg);
 
             return CryptographicOperations.FixedTimeEquals(
                 Encoding.UTF8.GetBytes(expected),
                 Encoding.UTF8.GetBytes(signature));
 
         }
-        public static string ComputeHmac(string secret, string message)
+
+        public string ComputeHmac(string message)
         {
-            using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(secret));
+            using var hmac = new HMACSHA256(Encoding.UTF8.GetBytes(_options.CurrentValue.SecretKey));
             var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(message));
             return Convert.ToHexString(hash).ToLower();
         }

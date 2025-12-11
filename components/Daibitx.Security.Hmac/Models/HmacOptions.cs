@@ -1,10 +1,10 @@
-﻿namespace Daibitx.Security.Hmac
+﻿namespace Daibitx.Security.Hmac.Models
 {
     public class HmacOptions
     {
         /// <summary>
         /// 双方共享的密钥，由网关和所有微服务共用。
-        /// 通常来自环境变量 / K8S Secret / AgileConfig。
+        /// 通常来自环境变量
         /// </summary>
         public string SecretKey { get; set; } = "";
 
