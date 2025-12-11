@@ -48,5 +48,18 @@ namespace Daibitx.Security.Hmac.Implementations
             var hash = hmac.ComputeHash(Encoding.UTF8.GetBytes(message));
             return Convert.ToHexString(hash).ToLower();
         }
+
+        public HmacHeaderSet ComputeHmac(string method, string path, string timestamp, string bodyHash, string signture)
+        {
+            var message = $"{method}:{path}:{timestamp}:{bodyHash}";
+            string signature = ComputeHmac(message);
+            var HmacHeaderSet = new HmacHeaderSet()
+            {
+                Timestamp = timestamp,
+                BodyHash = bodyHash,
+                Signature = signature,
+            };
+            return HmacHeaderSet;
+        }
     }
 }
