@@ -9,32 +9,32 @@
   --el-color-warning: #e6a23c;
   --el-color-danger: #f56c6c;
   --el-color-info: #909399;
-  
+
   // 文字颜色
   --el-text-color-primary: #303133;
   --el-text-color-regular: #606266;
   --el-text-color-secondary: #909399;
   --el-text-color-placeholder: #c0c4cc;
-  
+
   // 边框颜色
   --el-border-color: #dcdfe6;
   --el-border-color-light: #e4e7ed;
   --el-border-color-lighter: #ebeef5;
   --el-border-color-extra-light: #f2f6fc;
-  
+
   // 背景颜色
   --el-bg-color: #ffffff;
   --el-bg-color-page: #f0f2f5;
   --el-bg-color-overlay: #ffffff;
   --el-bg-color-hover: #f5f7fa;
-  
+
   // 填充颜色
   --el-fill-color: #f0f2f5;
   --el-fill-color-light: #f5f7fa;
   --el-fill-color-lighter: #fafafa;
   --el-fill-color-extra-light: #fafcff;
   --el-fill-color-blank: #ffffff;
-  
+
   // 遮罩颜色
   --el-mask-color: rgba(0, 0, 0, 0.5);
   --el-mask-color-extra-light: rgba(0, 0, 0, 0.05);
@@ -48,32 +48,32 @@ html.dark {
   --el-color-warning: #e6a23c;
   --el-color-danger: #f56c6c;
   --el-color-info: #909399;
-  
+
   // 文字颜色
   --el-text-color-primary: #e5eaf3;
   --el-text-color-regular: #cfd3dc;
   --el-text-color-secondary: #a3a6ad;
   --el-text-color-placeholder: #8d9095;
-  
+
   // 边框颜色
   --el-border-color: #4c4d4f;
   --el-border-color-light: #414243;
   --el-border-color-lighter: #363637;
   --el-border-color-extra-light: #2b2b2c;
-  
+
   // 背景颜色
   --el-bg-color: #141414;
   --el-bg-color-page: #0a0a0a;
   --el-bg-color-overlay: #1d1e1f;
   --el-bg-color-hover: #1b1b1b;
-  
+
   // 填充颜色
   --el-fill-color: #2b2b2b;
   --el-fill-color-light: #262727;
   --el-fill-color-lighter: #202020;
   --el-fill-color-extra-light: #1b1b1b;
   --el-fill-color-blank: #141414;
-  
+
   // 遮罩颜色
   --el-mask-color: rgba(0, 0, 0, 0.7);
   --el-mask-color-extra-light: rgba(0, 0, 0, 0.2);
@@ -104,6 +104,7 @@ body {
 
 #app {
   height: 100%;
+  font-weight: normal;
 }
 
 // 链接样式
@@ -113,11 +114,11 @@ a {
   transition: color 0.3s;
 
   &:hover {
-    color: darken($primary-color, 10%);
+    color: adjust($primary-color, 10%);
   }
 
   &:active {
-    color: darken($primary-color, 20%);
+    color: adjust($primary-color, 20%);
   }
 }
 
@@ -210,75 +211,245 @@ a {
 }
 
 // 间距工具类
-.m-0 { margin: 0 !important; }
-.m-xs { margin: $spacing-xs !important; }
-.m-sm { margin: $spacing-sm !important; }
-.m-md { margin: $spacing-md !important; }
-.m-lg { margin: $spacing-lg !important; }
-.m-xl { margin: $spacing-xl !important; }
+.m-0 {
+  margin: 0 !important;
+}
 
-.mt-0 { margin-top: 0 !important; }
-.mt-xs { margin-top: $spacing-xs !important; }
-.mt-sm { margin-top: $spacing-sm !important; }
-.mt-md { margin-top: $spacing-md !important; }
-.mt-lg { margin-top: $spacing-lg !important; }
-.mt-xl { margin-top: $spacing-xl !important; }
+.m-xs {
+  margin: $spacing-xs !important;
+}
 
-.mb-0 { margin-bottom: 0 !important; }
-.mb-xs { margin-bottom: $spacing-xs !important; }
-.mb-sm { margin-bottom: $spacing-sm !important; }
-.mb-md { margin-bottom: $spacing-md !important; }
-.mb-lg { margin-bottom: $spacing-lg !important; }
-.mb-xl { margin-bottom: $spacing-xl !important; }
+.m-sm {
+  margin: $spacing-sm !important;
+}
 
-.ml-0 { margin-left: 0 !important; }
-.ml-xs { margin-left: $spacing-xs !important; }
-.ml-sm { margin-left: $spacing-sm !important; }
-.ml-md { margin-left: $spacing-md !important; }
-.ml-lg { margin-left: $spacing-lg !important; }
-.ml-xl { margin-left: $spacing-xl !important; }
+.m-md {
+  margin: $spacing-md !important;
+}
 
-.mr-0 { margin-right: 0 !important; }
-.mr-xs { margin-right: $spacing-xs !important; }
-.mr-sm { margin-right: $spacing-sm !important; }
-.mr-md { margin-right: $spacing-md !important; }
-.mr-lg { margin-right: $spacing-lg !important; }
-.mr-xl { margin-right: $spacing-xl !important; }
+.m-lg {
+  margin: $spacing-lg !important;
+}
 
-.p-0 { padding: 0 !important; }
-.p-xs { padding: $spacing-xs !important; }
-.p-sm { padding: $spacing-sm !important; }
-.p-md { padding: $spacing-md !important; }
-.p-lg { padding: $spacing-lg !important; }
-.p-xl { padding: $spacing-xl !important; }
+.m-xl {
+  margin: $spacing-xl !important;
+}
 
-.pt-0 { padding-top: 0 !important; }
-.pt-xs { padding-top: $spacing-xs !important; }
-.pt-sm { padding-top: $spacing-sm !important; }
-.pt-md { padding-top: $spacing-md !important; }
-.pt-lg { padding-top: $spacing-lg !important; }
-.pt-xl { padding-top: $spacing-xl !important; }
+.mt-0 {
+  margin-top: 0 !important;
+}
 
-.pb-0 { padding-bottom: 0 !important; }
-.pb-xs { padding-bottom: $spacing-xs !important; }
-.pb-sm { padding-bottom: $spacing-sm !important; }
-.pb-md { padding-bottom: $spacing-md !important; }
-.pb-lg { padding-bottom: $spacing-lg !important; }
-.pb-xl { padding-bottom: $spacing-xl !important; }
+.mt-xs {
+  margin-top: $spacing-xs !important;
+}
 
-.pl-0 { padding-left: 0 !important; }
-.pl-xs { padding-left: $spacing-xs !important; }
-.pl-sm { padding-left: $spacing-sm !important; }
-.pl-md { padding-left: $spacing-md !important; }
-.pl-lg { padding-left: $spacing-lg !important; }
-.pl-xl { padding-left: $spacing-xl !important; }
+.mt-sm {
+  margin-top: $spacing-sm !important;
+}
 
-.pr-0 { padding-right: 0 !important; }
-.pr-xs { padding-right: $spacing-xs !important; }
-.pr-sm { padding-right: $spacing-sm !important; }
-.pr-md { padding-right: $spacing-md !important; }
-.pr-lg { padding-right: $spacing-lg !important; }
-.pr-xl { padding-right: $spacing-xl !important; }
+.mt-md {
+  margin-top: $spacing-md !important;
+}
+
+.mt-lg {
+  margin-top: $spacing-lg !important;
+}
+
+.mt-xl {
+  margin-top: $spacing-xl !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-xs {
+  margin-bottom: $spacing-xs !important;
+}
+
+.mb-sm {
+  margin-bottom: $spacing-sm !important;
+}
+
+.mb-md {
+  margin-bottom: $spacing-md !important;
+}
+
+.mb-lg {
+  margin-bottom: $spacing-lg !important;
+}
+
+.mb-xl {
+  margin-bottom: $spacing-xl !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.ml-xs {
+  margin-left: $spacing-xs !important;
+}
+
+.ml-sm {
+  margin-left: $spacing-sm !important;
+}
+
+.ml-md {
+  margin-left: $spacing-md !important;
+}
+
+.ml-lg {
+  margin-left: $spacing-lg !important;
+}
+
+.ml-xl {
+  margin-left: $spacing-xl !important;
+}
+
+.mr-0 {
+  margin-right: 0 !important;
+}
+
+.mr-xs {
+  margin-right: $spacing-xs !important;
+}
+
+.mr-sm {
+  margin-right: $spacing-sm !important;
+}
+
+.mr-md {
+  margin-right: $spacing-md !important;
+}
+
+.mr-lg {
+  margin-right: $spacing-lg !important;
+}
+
+.mr-xl {
+  margin-right: $spacing-xl !important;
+}
+
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-xs {
+  padding: $spacing-xs !important;
+}
+
+.p-sm {
+  padding: $spacing-sm !important;
+}
+
+.p-md {
+  padding: $spacing-md !important;
+}
+
+.p-lg {
+  padding: $spacing-lg !important;
+}
+
+.p-xl {
+  padding: $spacing-xl !important;
+}
+
+.pt-0 {
+  padding-top: 0 !important;
+}
+
+.pt-xs {
+  padding-top: $spacing-xs !important;
+}
+
+.pt-sm {
+  padding-top: $spacing-sm !important;
+}
+
+.pt-md {
+  padding-top: $spacing-md !important;
+}
+
+.pt-lg {
+  padding-top: $spacing-lg !important;
+}
+
+.pt-xl {
+  padding-top: $spacing-xl !important;
+}
+
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+.pb-xs {
+  padding-bottom: $spacing-xs !important;
+}
+
+.pb-sm {
+  padding-bottom: $spacing-sm !important;
+}
+
+.pb-md {
+  padding-bottom: $spacing-md !important;
+}
+
+.pb-lg {
+  padding-bottom: $spacing-lg !important;
+}
+
+.pb-xl {
+  padding-bottom: $spacing-xl !important;
+}
+
+.pl-0 {
+  padding-left: 0 !important;
+}
+
+.pl-xs {
+  padding-left: $spacing-xs !important;
+}
+
+.pl-sm {
+  padding-left: $spacing-sm !important;
+}
+
+.pl-md {
+  padding-left: $spacing-md !important;
+}
+
+.pl-lg {
+  padding-left: $spacing-lg !important;
+}
+
+.pl-xl {
+  padding-left: $spacing-xl !important;
+}
+
+.pr-0 {
+  padding-right: 0 !important;
+}
+
+.pr-xs {
+  padding-right: $spacing-xs !important;
+}
+
+.pr-sm {
+  padding-right: $spacing-sm !important;
+}
+
+.pr-md {
+  padding-right: $spacing-md !important;
+}
+
+.pr-lg {
+  padding-right: $spacing-lg !important;
+}
+
+.pr-xl {
+  padding-right: $spacing-xl !important;
+}
 
 // 显示工具类
 .d-none {

@@ -52,14 +52,16 @@
 import { computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElMessageBox } from 'element-plus'
-import { 
-  Fold, 
-  Expand, 
-  Moon, 
-  Sunny, 
-  User, 
-  Setting, 
-  SwitchButton 
+import {
+  Fold,
+  Expand,
+  Moon,
+  Sunny,
+  User,
+  Setting,
+  SwitchButton,
+  ZoomIn,
+  ZoomOut
 } from '@element-plus/icons-vue'
 import { useAuthStore } from '@/stores/authStore'
 import { useAppStore } from '@/stores/appStore'
@@ -130,6 +132,19 @@ const handleLogout = () => {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.zoom-level {
+  font-size: 13px;
+  color: var(--el-text-color-secondary);
+  min-width: 40px;
+  text-align: center;
 }
 
 .user-info {

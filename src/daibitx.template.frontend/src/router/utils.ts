@@ -12,7 +12,7 @@ export interface MenuItem {
 /**
  * 从路由配置生成菜单数据
  */
-export function generateMenuFromRoutes(routes: RouteRecordRaw[] = []): MenuItem[] {
+export function generateMenuFromRoutes(routes: readonly RouteRecordRaw[] = []): MenuItem[] {
   const menu: MenuItem[] = []
   
   // 获取布局路由的子路由

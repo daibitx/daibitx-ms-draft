@@ -1,6 +1,6 @@
 import axios from 'axios'
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios'
-import service from '@/utils/request'
+import service from '@/api/request'
 
 export interface ApiResponse<T = any> {
   code: number
