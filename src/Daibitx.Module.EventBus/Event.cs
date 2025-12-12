@@ -1,6 +1,6 @@
-﻿using Daibitx.Extension.Modularize.EventBus.Imp;
+﻿using Daibitx.Module.EventBus.Imp;
 
-namespace Daibitx.Extension.Modularize.EventBus
+namespace Daibitx.Module.EventBus
 {
     public class Event
     {

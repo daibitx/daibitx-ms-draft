@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login-form">
       <div class="login-header">
-        <img src="/favicon.ico" alt="logo" class="login-logo" />
+        <img src="/logo.ico" alt="logo" class="login-logo" />
         <h2 class="login-title">后台管理系统</h2>
         <p class="login-subtitle">欢迎回来，请登录您的账户</p>
       </div>
@@ -118,8 +118,6 @@ const handleLogin = async () => {
     
     // 模拟登录请求
     await authStore.login(loginForm.username, loginForm.password)
-    
-    ElMessage.success('登录成功')
     router.push('/')
   } catch (error) {
     console.error('登录失败:', error)
@@ -139,7 +137,7 @@ const handleForgotPassword = () => {
   align-items: center !important;
   justify-content: center !important;
   min-height: 100vh !important;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: linear-gradient(135deg, #66baea 0%, #56a6e7 100%) !important;
   position: relative !important;
   overflow: hidden !important;
   flex-direction: row !important;

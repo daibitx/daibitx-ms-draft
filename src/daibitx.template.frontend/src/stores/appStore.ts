@@ -15,7 +15,7 @@ export const useAppStore = defineStore('app', () => {
   const savedConfig = localStorage.getItem('app-config')
   const defaultConfig: AppConfig = {
     title: '后台管理系统',
-    logo: '/favicon.ico',
+    logo: '/logo.ico',
     theme: 'light',
     sidebarCollapsed: false,
     sidebarWidth: 240,

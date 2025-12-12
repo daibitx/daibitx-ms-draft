@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Reflection;
 
-namespace Daibitx.Extension.Modularize.EventBus
+namespace Daibitx.Module.EventBus
 {
     public static class EventMsgMapper
     {

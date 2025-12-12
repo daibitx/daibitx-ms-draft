@@ -1,7 +1,7 @@
-﻿using Daibitx.Extension.Modularize.EventBus.Abstraction;
+﻿using Daibitx.Module.EventBus.Abstraction;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Daibitx.Extension.Modularize.EventBus
+namespace Daibitx.Module.EventBus
 {
     public static class WebApplicationExtension
     {

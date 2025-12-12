@@ -1,7 +1,7 @@
-﻿using Daibitx.Extension.Modularize.EventBus.Abstraction;
+﻿using Daibitx.Module.EventBus.Abstraction;
 using System.Collections.Concurrent;
 
-namespace Daibitx.Extension.Modularize.EventBus.Imp
+namespace Daibitx.Module.EventBus.Imp
 {
     /// <summary>
     /// 事件工厂，所有事件通过 EventMessage 传递，自动桥接类型转换

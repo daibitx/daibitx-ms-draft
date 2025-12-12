@@ -1,7 +1,7 @@
-﻿using Daibitx.Extension.Modularize.EventBus.Abstraction;
+﻿using Daibitx.Module.EventBus.Abstraction;
 using System.Collections.Concurrent;
 
-namespace Daibitx.Extension.Modularize.EventBus.Imp
+namespace Daibitx.Module.EventBus.Imp
 {
     public class EventBus : IEventBus
     {

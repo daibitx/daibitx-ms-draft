@@ -1,4 +1,4 @@
-﻿namespace Daibitx.Extension.Modularize.EventBus.Abstraction
+﻿namespace Daibitx.Module.EventBus.Abstraction
 {
     /// <summary>
     /// 事件工厂
